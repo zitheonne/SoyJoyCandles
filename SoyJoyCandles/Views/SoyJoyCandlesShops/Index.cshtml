@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SoyJoyCandles.Models.SoyJoyCandlesShop>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+
+<form>
+	<p>
+		Candle Name : <input type="text" name="SearchString" />
+		<input type="submit" value="Search Candle" />
+
+	</p>
+</form>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.CandleName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CandleProducedDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CandleType)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Candleprice)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.CandleName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CandleProducedDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CandleType)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Candleprice)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

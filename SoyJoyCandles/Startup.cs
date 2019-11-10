@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using SoyJoyCandles.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SoyJoyCandles.Models;
 
 namespace SoyJoyCandles
 {
@@ -41,6 +42,9 @@ namespace SoyJoyCandles
 				.AddEntityFrameworkStores<ApplicationDbContext>();
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+		    services.AddDbContext<SoyJoyCandlesContext>(options =>
+		            options.UseSqlServer(Configuration.GetConnectionString("SoyJoyCandlesContext")));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
