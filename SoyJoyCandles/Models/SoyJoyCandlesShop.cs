@@ -4,10 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace SoyJoyCandles.Models
 {
 	public class SoyJoyCandlesShop
 	{
+		[Required]
 		public int ID { get; set; }
 
 		[StringLength(60, MinimumLength = 3)]
