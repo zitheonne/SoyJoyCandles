@@ -53,7 +53,7 @@ namespace SoyJoyCandles.Views.Candles
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,FlowerName,FlowerProducedDate,Type,price")] SoyJoyCandlesShop soyJoyCandlesShop)
+        public async Task<IActionResult> Create([Bind("ID,CandleName,CandleProducedDate,CandleType,Candleprice")] SoyJoyCandlesShop soyJoyCandlesShop)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace SoyJoyCandles.Views.Candles
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,FlowerName,FlowerProducedDate,Type,price")] SoyJoyCandlesShop soyJoyCandlesShop)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,CandleName,CandleProducedDate,CandleType,Candleprice")] SoyJoyCandlesShop soyJoyCandlesShop)
         {
             if (id != soyJoyCandlesShop.ID)
             {
