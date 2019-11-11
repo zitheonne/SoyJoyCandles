@@ -27,7 +27,7 @@ namespace SoyJoyCandles.Controllers
 				.AddJsonFile("appsettings.json");
 			IConfigurationRoot Configuration = builder.Build();
 			CloudStorageAccount storageAccount =
-				CloudStorageAccount.Parse(Configuration["ConnectionStrings:DefaultEndpointsProtocol=https;AccountName=soyjoystorageaspnet;AccountKey=mK17ti5JHcBLNFNxsdmVhayIPqjLwJBTHaQMIsGLiGIvBn49nLVn8Nm6VJDxXAibTHuKD/yFio7zP03oazTjTQ==;EndpointSuffix=core.windows.net"]);
+				CloudStorageAccount.Parse(Configuration["ConnectionStrings:AzureStorageConnectionString-1"]);
 
 			CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 			CloudTable table = tableClient.GetTableReference("CandleTable");
@@ -43,7 +43,7 @@ namespace SoyJoyCandles.Controllers
 				.AddJsonFile("appsettings.json");
 			IConfigurationRoot Configuration = builder.Build();
 			CloudStorageAccount storageAccount =
-				CloudStorageAccount.Parse(Configuration["ConnectionStrings:DefaultEndpointsProtocol=https;AccountName=soyjoystorageaspnet;AccountKey=mK17ti5JHcBLNFNxsdmVhayIPqjLwJBTHaQMIsGLiGIvBn49nLVn8Nm6VJDxXAibTHuKD/yFio7zP03oazTjTQ==;EndpointSuffix=core.windows.net"]);
+				CloudStorageAccount.Parse(Configuration["ConnectionStrings:AzureStorageConnectionString-1"]);
 
 			CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 			CloudTable table = tableClient.GetTableReference("CandleTable");
