@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SoyJoyCandles.Models.CandleEntity>
+@{
+    ViewData["Title"] = "Get Partition";
+}
+
+<h2>Get Partition Results</h2>
+
+<table border="1">
+	<tr>
+		<th>Origin Name</th>
+		<th>Type Name</th>
+		<th>Produced Date</th>
+		<th>Candle Type</th>
+		<th>Candle Price</th>
+		<th>Delete</th>
+	</tr>
+
+	@foreach(var candle in Model)
+	{
+		<tr>
+			<td>
+				@candle.RowKey
+			</td>
+			<td>
+				@candle.PartitionKey
+			</td>
+			<td>
+				@candle.CandleProducedDate
+			</td>
+			<td>
+				@candle.CandleType
+			</td>
+			<td>
+				@candle.Candleprice
+			</td>
+			<td>
+				@{ 
+							var parms = new Dictionary<string, string>
+					{
+						{ "partitionkey", candle.PartitionKey },
+						{ "rowkey", candle.RowKey}
+						
+					};
+				}
+				<a asp-area="" asp-controller="Tables" asp-action="DeleteEntity" asp-all-route-data="parms"><button>Delete</button></a>
+			</td>
+		</tr>
+	}
+</table>

@@ -1,9 +1,60 @@
-﻿
+﻿@model SoyJoyCandles.Models.CandleEntity
+
 @{
     ViewData["Title"] = "AddEntity";
 }
 
-<h2>Add entity results</h2>
+<h2>AddEntity</h2>
 
-Insert of entity into @ViewBag.TableName @(ViewBag.Result == 204 ? "succeeded" : "failed")
+<h4>CandleEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEntity">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CandleProducedDate" class="control-label"></label>
+                <input asp-for="CandleProducedDate" class="form-control" />
+                <span asp-validation-for="CandleProducedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CandleType" class="control-label"></label>
+                <input asp-for="CandleType" class="form-control" />
+                <span asp-validation-for="CandleType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candleprice" class="control-label"></label>
+                <input asp-for="Candleprice" class="form-control" />
+                <span asp-validation-for="Candleprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartitionKey" class="control-label"></label>
+                <input asp-for="PartitionKey" class="form-control" />
+                <span asp-validation-for="PartitionKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RowKey" class="control-label"></label>
+                <input asp-for="RowKey" class="form-control" />
+                <span asp-validation-for="RowKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Timestamp" class="control-label"></label>
+                <input asp-for="Timestamp" class="form-control" />
+                <span asp-validation-for="Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ETag" class="control-label"></label>
+                <input asp-for="ETag" class="form-control" />
+                <span asp-validation-for="ETag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 

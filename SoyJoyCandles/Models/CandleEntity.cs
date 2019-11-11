@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage.Table;
+using System.ComponentModel.DataAnnotations;
 
 namespace SoyJoyCandles.Models
 {
@@ -41,5 +42,8 @@ namespace SoyJoyCandles.Models
 		//[Range(1, 200)] //until 2hundred, cannot add more
 		//[Required]
 		public string Candleprice { get; set; }
+
+		[Key]
+		public int IDProduct { get; set; }
 	}
 }
