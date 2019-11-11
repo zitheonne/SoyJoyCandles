@@ -2,17 +2,18 @@
 @{
     ViewData["Title"] = "Get Partition";
 }
-
-<h2>Get Partition Results</h2>
+<br />
+<h2><b>Our Updated Candle List<b /></h2>
+<br /><br />
 
 <table border="1">
 	<tr>
-		<th>Origin Name</th>
-		<th>Type Name</th>
-		<th>Produced Date</th>
-		<th>Candle Type</th>
-		<th>Candle Price</th>
-		<th>Delete</th>
+		<th>  Origin Name  </th>
+		<th>  Type Name  </th>
+		<th>  Produced Date  </th>
+		<th>  Candle Type  </th>
+		<th>  Candle Price  </th>
+		<th>  Delete  </th>
 	</tr>
 
 	@foreach(var candle in Model)
@@ -38,10 +39,11 @@
 							var parms = new Dictionary<string, string>
 					{
 						{ "partitionkey", candle.PartitionKey },
-						{ "rowkey", candle.RowKey}
+						{ "rowkey", candle.RowKey }
 						
 					};
 				}
+				<a asp-area="" asp-controller="Tables" asp-action="Buy" asp-all-route-data="parms"><button>Buy</button></a>
 				<a asp-area="" asp-controller="Tables" asp-action="DeleteEntity" asp-all-route-data="parms"><button>Delete</button></a>
 			</td>
 		</tr>

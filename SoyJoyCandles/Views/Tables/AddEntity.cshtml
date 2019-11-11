@@ -4,9 +4,9 @@
     ViewData["Title"] = "AddEntity";
 }
 
-<h2>AddEntity</h2>
+<h2>Add an Entry</h2>
 
-<h4>CandleEntity</h4>
+<h4>Candle Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -42,11 +42,11 @@
                 <input asp-for="Timestamp" class="form-control" />
                 <span asp-validation-for="Timestamp" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="ETag" class="control-label"></label>
                 <input asp-for="ETag" class="form-control" />
                 <span asp-validation-for="ETag" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -55,6 +55,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="GetPartition">Back to List</a>
 </div>
 

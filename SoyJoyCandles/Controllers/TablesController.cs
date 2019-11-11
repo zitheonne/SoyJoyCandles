@@ -169,6 +169,10 @@ namespace SoyJoyCandles.Controllers
 
 		}
 
+		public ActionResult Buy()
+		{
+			return View();
+		}
 
     }
 }
