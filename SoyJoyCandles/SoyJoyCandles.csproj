@@ -3,9 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-SoyJoyCandles-B7AB3852-DD81-47DD-B0C5-FBF5E06EAB7C</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/0cb8bcd0-40e2-4c72-868d-3c18227ccb80/resourcegroups/SoyJoyCandles/providers/microsoft.insights/components/SoyJoyCandles</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.11" />
